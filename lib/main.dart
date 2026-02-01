@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hplusplus/settings_screen.dart';
 import 'package:hplusplus/common.dart';
 import 'package:hplusplus/home_screen.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 void main() {
   runApp(const MyApp());

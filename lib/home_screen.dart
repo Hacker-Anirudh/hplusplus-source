@@ -157,7 +157,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(8.0),
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      int _graad = graad.toInt();
                       Common.openlink('https://www.bidoc.net/hhh/index.html');
                     },
                     icon: Icon(Icons.book_rounded, size: 24),

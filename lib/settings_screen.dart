@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hplusplus/common.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -79,6 +81,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
             SizedBox(height: 16),
+            Text('WASM aan (alleen van toepassing op website-versie): ${bool.fromEnvironment('dart.tool.dart2wasm')}'),
             Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,
@@ -89,7 +92,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       showAboutDialog(
                         context: context,
                         applicationName: 'H++',
-                        applicationVersion: '0.7.2',
+                        applicationVersion: '0.9.2',
                         applicationIcon: Image.asset('assets/icon.png'),
                         applicationLegalese:
                             'GNU GPL v3 licentie. © 2020-2026 Anirudh Menon. Alle rechten voorbehouden.',
