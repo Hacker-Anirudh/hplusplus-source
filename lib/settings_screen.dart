@@ -16,95 +16,99 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            const Text(
-              'Klas instellen',
-              style: TextStyle(fontFamily: 'VT323', fontSize: 36),
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: 650,
-              child: TextField(
-                controller: _klasController,
-                decoration: const InputDecoration(
-                  labelText: 'Voer klas in',
-                  border: OutlineInputBorder(),
-                ),
-                onChanged: (value) {
-                  setState(() {
-                    klas = value.trim().toUpperCase();
-                    if (klas.length > 1) {
-                      final second = klas[1];
-                      const Map<String, int> secondToGraad = {
-                        '1': 1,
-                        '2': 1,
-                        '3': 2,
-                        '4': 2,
-                        '5': 3,
-                        '6': 3,
-                        '7': 3,
-                        '8': 3,
-                      };
-                      if (secondToGraad.containsKey(second)) {
-                        graad = secondToGraad[second]!.toDouble();
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              const Text(
+                'Klas instellen',
+                style: TextStyle(fontFamily: 'VT323', fontSize: 36),
+              ),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: 650,
+                child: TextField(
+                  controller: _klasController,
+                  decoration: const InputDecoration(
+                    labelText: 'Voer klas in',
+                    border: OutlineInputBorder(),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      klas = value.trim().toUpperCase();
+                      if (klas.length > 1) {
+                        final second = klas[1];
+                        const Map<String, int> secondToGraad = {
+                          '1': 1,
+                          '2': 1,
+                          '3': 2,
+                          '4': 2,
+                          '5': 3,
+                          '6': 3,
+                          '7': 3,
+                          '8': 3,
+                        };
+                        if (secondToGraad.containsKey(second)) {
+                          graad = secondToGraad[second]!.toDouble();
+                        }
                       }
-                    }
-                  });
-                  Common.saveClass();
-                  Common.saveGraad();
-                },
+                    });
+                    Common.saveClass();
+                    Common.saveGraad();
+                  },
+                ),
               ),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              'Ingestelde klas: $klas',
-              style: TextStyle(fontSize: 24, fontFamily: 'VT323'),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              'Zoekmachine selecteren',
-              style: TextStyle(fontFamily: 'VT323', fontSize: 36),
-            ),
-            const SizedBox(height: 16),
-            Center(
-              child: RadioGroup<int>(
-                groupValue: searchEngine,
-                onChanged: (value) {
-                  setState(() {
-                    searchEngine = value!;
-                    Common.saveSearchEngine();
-                  });
-                },
-                child: Column(children: billywilly),
+              const SizedBox(height: 16),
+              Text(
+                'Ingestelde klas: $klas',
+                style: TextStyle(fontSize: 24, fontFamily: 'VT323'),
               ),
-            ),
-            SizedBox(height: 16),
-            Text('WASM aan (alleen van toepassing op website-versie): $isWasm'),
-            Expanded(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(36.0),
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-                      showAboutDialog(
-                        context: context,
-                        applicationName: 'H++',
-                        applicationVersion: '0.9.3',
-                        applicationIcon: Image.asset('assets/icon.png'),
-                        applicationLegalese:
-                            'GNU GPL v3 licentie. © 2020-2026 Anirudh Menon. Alle rechten voorbehouden.',
-                      );
-                    },
-                    label: Text('Over H++', style: TextStyle(fontSize: 18)),
-                    icon: Icon(Icons.info_rounded),
+              const SizedBox(height: 16),
+              const Text(
+                'Zoekmachine selecteren',
+                style: TextStyle(fontFamily: 'VT323', fontSize: 36),
+              ),
+              const SizedBox(height: 16),
+              Center(
+                child: RadioGroup<int>(
+                  groupValue: searchEngine,
+                  onChanged: (value) {
+                    setState(() {
+                      searchEngine = value!;
+                      Common.saveSearchEngine();
+                    });
+                  },
+                  child: Column(children: billywilly),
+                ),
+              ),
+              SizedBox(height: 16),
+              Text(
+                'WASM aan (alleen van toepassing op website-versie): $isWasm',
+              ),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.all(36.0),
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        showAboutDialog(
+                          context: context,
+                          applicationName: 'H++',
+                          applicationVersion: '1.0.0',
+                          applicationIcon: Image.asset('assets/icon.png'),
+                          applicationLegalese:
+                              'GNU GPL v3 licentie. © 2020-2026 Anirudh Menon. Alle rechten voorbehouden.',
+                        );
+                      },
+                      label: Text('Over H++', style: TextStyle(fontSize: 18)),
+                      icon: Icon(Icons.info_rounded),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
