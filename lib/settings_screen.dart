@@ -18,7 +18,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           children: [
             const Text(
-              'Klas selecteren',
+              'Klas instellen',
               style: TextStyle(fontFamily: 'VT323', fontSize: 36),
             ),
             const SizedBox(height: 16),
@@ -56,6 +56,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
             const SizedBox(height: 16),
+            Text(
+              'Ingestelde klas: $klas',
+              style: TextStyle(fontSize: 24, fontFamily: 'VT323'),
+            ),
+            const SizedBox(height: 16),
             const Text(
               'Zoekmachine selecteren',
               style: TextStyle(fontFamily: 'VT323', fontSize: 36),
@@ -70,37 +75,29 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     Common.saveSearchEngine();
                   });
                 },
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      title: Text('DuckDuckGo'),
-                      leading: Radio<int>(value: 1),
-                    ),
-                    ListTile(
-                      title: Text('Google'),
-                      leading: Radio<int>(value: 2),
-                    ),
-                    ListTile(
-                      title: Text('Bing'),
-                      leading: Radio<int>(value: 3),
-                    ),
-                    ListTile(
-                      title: Text('Brave'),
-                      leading: Radio<int>(value: 4),
-                    ),
-                    ListTile(
-                      title: Text('Ecosia'),
-                      leading: Radio<int>(value: 5),
-                    ),
-                    ListTile(
-                      title: Text('Yahoo'),
-                      leading: Radio<int>(value: 6),
-                    ),
-                    ListTile(
-                      title: Text('Startpage'),
-                      leading: Radio<int>(value: 7),
-                    ),
-                  ],
+                child: Column(children: billywilly),
+              ),
+            ),
+            SizedBox(height: 16),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(36.0),
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      showAboutDialog(
+                        context: context,
+                        applicationName: 'H++',
+                        applicationVersion: '0.7.2',
+                        applicationIcon: Image.asset('assets/icon.png'),
+                        applicationLegalese:
+                            'GNU GPL v3 licentie. © 2020-2026 Anirudh Menon. Alle rechten voorbehouden.',
+                      );
+                    },
+                    label: Text('Over H++', style: TextStyle(fontSize: 18)),
+                    icon: Icon(Icons.info_rounded),
+                  ),
                 ),
               ),
             ),
@@ -108,5 +105,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
     );
+  }
+
+  List<Widget> get billywilly {
+    return <Widget>[
+      ListTile(title: Text('DuckDuckGo'), leading: Radio<int>(value: 1)),
+      ListTile(title: Text('Google'), leading: Radio<int>(value: 2)),
+      ListTile(title: Text('Bing'), leading: Radio<int>(value: 3)),
+      ListTile(title: Text('Brave'), leading: Radio<int>(value: 4)),
+      ListTile(title: Text('Ecosia'), leading: Radio<int>(value: 5)),
+      ListTile(title: Text('Yahoo'), leading: Radio<int>(value: 6)),
+      ListTile(title: Text('Startpage'), leading: Radio<int>(value: 7)),
+    ];
   }
 }

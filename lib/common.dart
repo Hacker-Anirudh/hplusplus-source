@@ -202,7 +202,7 @@ class Common {
     final Uri _url = Uri.parse(url);
     launchUrl(_url);
   }
-  
+
   static Future<void> saveSearchEngine() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt('searchEngine', searchEngine);
@@ -242,5 +242,4 @@ class Common {
     final prefs = await SharedPreferences.getInstance();
     graad = prefs.getDouble('graad') ?? 2.0;
   }
-
 }

@@ -5,7 +5,7 @@ group: Applications/Development Tools
 vendor: Anirudh Menon
 packager: Anirudh Menon
 packagerEmail: thenasaplusit@proton.me
-license: GPL v3.0
+license: GPLv3
 url: https://github.com/Hacker-Anirudh/hplusplus-source
 
 build_arch: x86_64
