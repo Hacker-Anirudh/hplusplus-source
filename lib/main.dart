@@ -157,17 +157,6 @@ class _MyAppState extends State<MyApp> {
                     style: ElevatedButton.styleFrom(minimumSize: Size(280, 96)),     
                   )
                   ),
-                  Padding(padding:  EdgeInsets.all(8.0),
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-                      int _graad = graad.toInt();
-                      Common.openlink('https://hhh.exxeda.com/overzicht/vervangingen?graad=$_graad');
-                    },
-                    icon: Icon(Icons.question_mark_rounded, size: 24),
-                    label: Text('Afwezigen en vervangingen', style: TextStyle(fontSize: 18)),
-                    style: ElevatedButton.styleFrom(minimumSize: Size(280, 96)),     
-                  )
-                  ),
                 ],
               ),
               Padding(padding:  EdgeInsets.all(24.0),
@@ -186,6 +175,28 @@ class _MyAppState extends State<MyApp> {
                       label: Text('Lessenrooster', style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(minimumSize: Size(280, 96)),
                     ),
+                  ),
+                  Padding(padding:  EdgeInsets.all(8.0),
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      int _graad = graad.toInt();
+                      Common.openlink('https://hhh.exxeda.com/overzicht/vervangingen?graad=$_graad');
+                    },
+                    icon: Icon(Icons.question_mark_rounded, size: 24),
+                    label: Text('Afwezigen en vervangingen', style: TextStyle(fontSize: 18)),
+                    style: ElevatedButton.styleFrom(minimumSize: Size(280, 96)),     
+                  )
+                  ),
+                  Padding(padding:  EdgeInsets.all(8.0),
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      int _graad = graad.toInt();
+                      Common.openlink('https://hhscholen.be');
+                    },
+                    icon: const Icon( Icons.language_rounded, size: 24),
+                    label: Text('Website HHH', style: TextStyle(fontSize: 18)),
+                    style: ElevatedButton.styleFrom(minimumSize: Size(280, 96)),     
+                  )
                   ),
                 ],
               ),

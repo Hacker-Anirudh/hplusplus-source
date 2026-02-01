@@ -1,0 +1,33 @@
+display_name: H++
+package_name: hplusplus
+
+maintainer:
+  name: Anirudh Menon
+  email: thenasaplusit@proton.me
+
+priority: optional
+
+section: wayland
+
+installed_size: 13000
+
+dependencies:
+  - libgtk-3-dev
+  - libglu1-mesa
+
+essential: false
+
+icon: linux/assets/icon.png
+
+postuninstall_scripts:
+  - echo "Sorry to see you go."
+
+keywords:
+  - school
+
+generic_name: H++
+
+categories:
+  - Utility
+
+startup_notify: true

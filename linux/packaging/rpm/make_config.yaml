@@ -1,0 +1,28 @@
+display_name: H++
+icon: linux/assets/icon.png
+summary: Een vervanging voor de vreselijke Startpagina HHH, geschreven in Flutter.
+group: Applications/Development Tools
+vendor: Anirudh Menon
+packager: Anirudh Menon
+packagerEmail: thenasaplusit@proton.me
+license: GPL v3.0
+url: https://github.com/Hacker-Anirudh/hplusplus-source
+
+build_arch: x86_64
+
+requires:
+  - gtk3
+  - gtk3-devel
+  - mesa-libEGL-devel
+  - mesa-libEGL
+  
+
+keywords:
+  - school
+
+generic_name: H++
+
+categories:
+  - Utility
+
+startup_notify: true
