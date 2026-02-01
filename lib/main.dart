@@ -78,15 +78,12 @@ class _MyAppState extends State<MyApp> {
                   label: Text('Start'),
                 ),
                 NavigationRailDestination(icon: Icon(Icons.settings_rounded), label: Text('Instellingen')),
-                NavigationRailDestination(icon: Icon(Icons.grid_3x3_rounded), label: Text('Lessenrooster')),
               ],
             ),
             Expanded(
               child: _selectedIndex == 0
                   ? homeScreen()
-                  : _selectedIndex == 1
-                      ? const SettingsScreen()
-                      : lessenroosterScreen(),
+                  : SettingsScreen()
             ),
           ],
         ),
@@ -183,9 +180,7 @@ class _MyAppState extends State<MyApp> {
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        setState(() {
-                          _selectedIndex = 2;
-                        });
+                        Common.openlink('https://llnroosters.hhscholen.be/klassen/ed${classMap[klas]}p00001s3fffffffffffffff_${klas.toLowerCase()}_vs.png');
                       },
                       icon: Icon(Icons.grid_3x3_rounded, size: 24),
                       label: Text('Lessenrooster', style: TextStyle(fontSize: 18)),
@@ -197,12 +192,6 @@ class _MyAppState extends State<MyApp> {
             ],
         )
         )  
-    );
-  }
-  
-  Scaffold lessenroosterScreen() {
-    return Scaffold(
-      body: Image.network('https://llnroosters.hhscholen.be/klassen/ed${classMap[klas]}p00001s3fffffffffffffff_${klas.toLowerCase()}_vs.png')
     );
   }
 }
