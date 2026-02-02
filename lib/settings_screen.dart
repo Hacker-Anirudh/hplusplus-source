@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hplusplus/common.dart';
+import 'package:hplusplus/strings.dart';
 
 const bool isWasm = bool.fromEnvironment('dart.tool.dart2wasm');
 
@@ -21,7 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: Column(
             children: [
               const Text(
-                'Klas instellen',
+                SettingsStrings.klasInstellen,
                 style: TextStyle(fontFamily: 'VT323', fontSize: 36),
               ),
               const SizedBox(height: 16),
@@ -30,7 +31,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: TextField(
                   controller: _klasController,
                   decoration: const InputDecoration(
-                    labelText: 'Voer klas in',
+                    labelText: SettingsStrings.voerKlasIn,
                     border: OutlineInputBorder(),
                   ),
                   onChanged: (value) {
@@ -60,12 +61,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               const SizedBox(height: 16),
               Text(
-                'Ingestelde klas: $klas',
+                '${SettingsStrings.ingesteldeKlas} $klas',
                 style: TextStyle(fontSize: 24, fontFamily: 'VT323'),
               ),
               const SizedBox(height: 16),
               const Text(
-                'Zoekmachine selecteren',
+                SettingsStrings.zoekmachineSelecteren,
                 style: TextStyle(fontFamily: 'VT323', fontSize: 36),
               ),
               const SizedBox(height: 16),
@@ -82,9 +83,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
               SizedBox(height: 16),
-              Text(
-                'WASM aan (alleen van toepassing op website-versie): $isWasm',
-              ),
+              Text('${SettingsStrings.wasm}$isWasm'),
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
@@ -94,14 +93,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       onPressed: () {
                         showAboutDialog(
                           context: context,
-                          applicationName: 'H++',
-                          applicationVersion: '1.0.1',
+                          applicationName: SettingsStrings.title,
+                          applicationVersion: SettingsStrings.ver,
                           applicationIcon: Image.asset('assets/icon.png'),
-                          applicationLegalese:
-                              'GNU GPL v3 licentie. © 2020-2026 Anirudh Menon. Alle rechten voorbehouden.',
+                          applicationLegalese: SettingsStrings.legalese,
                         );
                       },
-                      label: Text('Over H++', style: TextStyle(fontSize: 18)),
+                      label: Text(
+                        SettingsStrings.aboutButton,
+                        style: TextStyle(fontSize: 18),
+                      ),
                       icon: Icon(Icons.info_rounded),
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hplusplus/common.dart';
 import 'package:hplusplus/db.dart';
+import 'strings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: EdgeInsets.all(24.0),
               child: Text(
-                'Belangrijk',
+                HomeStrings.belangrijk,
                 style: TextStyle(fontFamily: 'VT323', fontSize: 36),
               ),
             ),
@@ -67,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: EdgeInsets.all(24.0),
               child: Text(
-                'Info',
+                HomeStrings.info,
                 style: TextStyle(fontFamily: 'VT323', fontSize: 36),
               ),
             ),
@@ -123,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: EdgeInsets.all(24.0),
               child: Text(
-                'Nuttige tools',
+                HomeStrings.tools,
                 style: TextStyle(fontFamily: 'VT323', fontSize: 36),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hplusplus/strings.dart';
 
 class PixelArtScreen extends StatefulWidget {
   const PixelArtScreen({super.key});
@@ -26,12 +27,6 @@ class PixelArtScreenState extends State<PixelArtScreen> {
     double pixelSize = 400 / 16;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Pixel Art',
-          style: TextStyle(fontFamily: 'VT323', fontSize: 48),
-        ),
-      ),
       body: Column(
         children: [
           Padding(
@@ -41,7 +36,7 @@ class PixelArtScreenState extends State<PixelArtScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(3.7),
                   child: Text(
-                    'Op deze website kan u genieten van een pixel art van zeer goede kwaliteit. Geniet ervan!',
+                    PixelArtStrings.description,
                     style: TextStyle(fontSize: 22),
                   ),
                 ),

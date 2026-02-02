@@ -3,6 +3,7 @@ import 'package:hplusplus/settings_screen.dart';
 import 'package:hplusplus/common.dart';
 import 'package:hplusplus/home_screen.dart';
 import 'package:hplusplus/pixelart.dart';
+import 'package:hplusplus/strings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'H++',
+      title: MainStrings.title,
 
       theme: appTheme(),
 
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
           child: FloatingActionButton(
             onPressed: () {},
             child: Tooltip(
-              message: 'Verander van kleurenmodus',
+              message: MainStrings.kleurenModusTooltip,
               child: IconButton(
                 isSelected: isDark,
                 onPressed: () {
@@ -51,7 +52,7 @@ class _MyAppState extends State<MyApp> {
         ),
         appBar: AppBar(
           title: const Text(
-            'H++ Startpagina',
+            MainStrings.appName,
             style: TextStyle(fontFamily: 'VT323', fontSize: 28),
           ),
           actions: [
@@ -66,7 +67,7 @@ class _MyAppState extends State<MyApp> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(64.0),
                   ),
-                  hintText: 'Tik een zoekterm in',
+                  hintText: MainStrings.zoekTerm,
                   labelText: searchEngines[searchEngine]![0],
                 ),
               ),
@@ -86,15 +87,15 @@ class _MyAppState extends State<MyApp> {
               destinations: const [
                 NavigationRailDestination(
                   icon: Icon(Icons.home),
-                  label: Text('Start'),
+                  label: Text(MainStrings.navRail1),
                 ),
                 NavigationRailDestination(
                   icon: Icon(Icons.grid_4x4_rounded),
-                  label: Text('Pixelart'),
+                  label: Text(MainStrings.navRail2),
                 ),
                 NavigationRailDestination(
                   icon: Icon(Icons.settings_rounded),
-                  label: Text('Instellingen'),
+                  label: Text(MainStrings.navRail3),
                 ),
               ],
             ),
