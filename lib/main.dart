@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
 
       home: Scaffold(
         floatingActionButton: Padding(
-          padding: EdgeInsets.only(bottom: 50.0),
+          padding: EdgeInsets.all(40.0),
           child: FloatingActionButton(
             onPressed: () {},
             child: Tooltip(
