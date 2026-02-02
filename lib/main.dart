@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hplusplus/settings_screen.dart';
 import 'package:hplusplus/common.dart';
 import 'package:hplusplus/home_screen.dart';
+import 'package:hplusplus/pixelart.dart';
 
 void main() {
   runApp(const MyApp());
@@ -88,13 +89,21 @@ class _MyAppState extends State<MyApp> {
                   label: Text('Start'),
                 ),
                 NavigationRailDestination(
+                  icon: Icon(Icons.grid_4x4_rounded),
+                  label: Text('Pixelart'),
+                ),
+                NavigationRailDestination(
                   icon: Icon(Icons.settings_rounded),
                   label: Text('Instellingen'),
                 ),
               ],
             ),
             Expanded(
-              child: _selectedIndex == 0 ? HomeScreen() : SettingsScreen(),
+              child: {
+                0: HomeScreen(),
+                1: PixelArtScreen(),
+                2: SettingsScreen(),
+              }[_selectedIndex]!,
             ),
           ],
         ),
