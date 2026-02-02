@@ -95,7 +95,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         showAboutDialog(
                           context: context,
                           applicationName: 'H++',
-                          applicationVersion: '1.0.0',
+                          applicationVersion: '1.0.1',
                           applicationIcon: Image.asset('assets/icon.png'),
                           applicationLegalese:
                               'GNU GPL v3 licentie. © 2020-2026 Anirudh Menon. Alle rechten voorbehouden.',
