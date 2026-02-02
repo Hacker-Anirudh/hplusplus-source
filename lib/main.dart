@@ -28,20 +28,23 @@ class _MyAppState extends State<MyApp> {
       theme: appTheme(),
 
       home: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Tooltip(
-            message: 'Verander van kleurenmodus',
-            child: IconButton(
-              isSelected: isDark,
-              onPressed: () {
-                setState(() {
-                  isDark = !isDark;
-                });
-                Common.saveTheme();
-              },
-              icon: const Icon(Icons.wb_sunny_outlined),
-              selectedIcon: const Icon(Icons.brightness_2_outlined),
+        floatingActionButton: Padding(
+          padding: EdgeInsets.only(bottom: 50.0),
+          child: FloatingActionButton(
+            onPressed: () {},
+            child: Tooltip(
+              message: 'Verander van kleurenmodus',
+              child: IconButton(
+                isSelected: isDark,
+                onPressed: () {
+                  setState(() {
+                    isDark = !isDark;
+                  });
+                  Common.saveTheme();
+                },
+                icon: const Icon(Icons.wb_sunny_outlined),
+                selectedIcon: const Icon(Icons.brightness_2_outlined),
+              ),
             ),
           ),
         ),

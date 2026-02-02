@@ -12,19 +12,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            isDark = !isDark;
-          });
-        },
-        child: Tooltip(
-          message: 'Verander van kleurenmodus',
-          child: Icon(
-            isDark ? Icons.wb_sunny_outlined : Icons.brightness_2_outlined,
-          ),
-        ),
-      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: .center,
