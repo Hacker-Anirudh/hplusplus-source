@@ -29,12 +29,12 @@ class PixelArtScreenState extends State<PixelArtScreen> {
     return Scaffold(
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(32.0),
+          const Padding(
+            padding: .all(32.0),
             child: Center(
               child: Card(
                 child: Padding(
-                  padding: const EdgeInsets.all(3.7),
+                  padding: .all(3.7),
                   child: Text(
                     PixelArtStrings.description,
                     style: TextStyle(fontSize: 22),
@@ -68,7 +68,7 @@ class PixelArtScreenState extends State<PixelArtScreen> {
                       height: 40,
                       decoration: BoxDecoration(
                         color: color,
-                        shape: BoxShape.circle,
+                        shape: .circle,
                         border: Border.all(
                           color: selectedColor == color
                               ? Colors.white
@@ -86,7 +86,7 @@ class PixelArtScreenState extends State<PixelArtScreen> {
                 width: 400,
                 height: 400,
                 child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 16,
                     crossAxisSpacing: 1.0,
                     mainAxisSpacing: 1.0,

@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
 
       home: Scaffold(
         floatingActionButton: Padding(
-          padding: EdgeInsets.all(40.0),
+          padding: const .all(40.0),
           child: FloatingActionButton(
             onPressed: () {},
             child: Tooltip(
@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
                   Common.openlink(searchEngines[searchEngine]![1] + value);
                 },
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(64.0),
                   ),
@@ -101,9 +101,9 @@ class _MyAppState extends State<MyApp> {
             ),
             Expanded(
               child: {
-                0: HomeScreen(),
-                1: PixelArtScreen(),
-                2: SettingsScreen(),
+                0: const HomeScreen(),
+                1: const PixelArtScreen(),
+                2: const SettingsScreen(),
               }[_selectedIndex]!,
             ),
           ],
@@ -115,10 +115,10 @@ class _MyAppState extends State<MyApp> {
   ThemeData appTheme() {
     return ThemeData(
       useMaterial3: true,
-      brightness: isDark ? Brightness.dark : Brightness.light,
+      brightness: isDark ? .dark : .light,
       colorScheme: ColorScheme.fromSeed(
         seedColor: isDark ? Colors.blueAccent : Colors.lightBlueAccent,
-        brightness: isDark ? Brightness.dark : Brightness.light,
+        brightness: isDark ? .dark : .light,
       ),
     );
   }

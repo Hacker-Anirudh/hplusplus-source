@@ -62,7 +62,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               const SizedBox(height: 16),
               Text(
                 '${SettingsStrings.ingesteldeKlas} $klas',
-                style: TextStyle(fontSize: 24, fontFamily: 'VT323'),
+                style: const TextStyle(fontSize: 24, fontFamily: 'VT323'),
               ),
               const SizedBox(height: 16),
               const Text(
@@ -82,13 +82,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   child: Column(children: billywilly),
                 ),
               ),
-              SizedBox(height: 16),
-              Text('${SettingsStrings.wasm}$isWasm'),
+              const SizedBox(height: 16),
+              const Text('${SettingsStrings.wasm}$isWasm'),
               Expanded(
                 child: Align(
-                  alignment: Alignment.bottomCenter,
+                  alignment: .bottomCenter,
                   child: Padding(
-                    padding: const EdgeInsets.all(36.0),
+                    padding: const .all(36.0),
                     child: ElevatedButton.icon(
                       onPressed: () {
                         showAboutDialog(
@@ -99,11 +99,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           applicationLegalese: SettingsStrings.legalese,
                         );
                       },
-                      label: Text(
+                      label: const Text(
                         SettingsStrings.aboutButton,
                         style: TextStyle(fontSize: 18),
                       ),
-                      icon: Icon(Icons.info_rounded),
+                      icon: const Icon(Icons.info_rounded),
                     ),
                   ),
                 ),
@@ -117,13 +117,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   List<Widget> get billywilly {
     return <Widget>[
-      ListTile(title: Text('DuckDuckGo'), leading: Radio<int>(value: 1)),
-      ListTile(title: Text('Google'), leading: Radio<int>(value: 2)),
-      ListTile(title: Text('Bing'), leading: Radio<int>(value: 3)),
-      ListTile(title: Text('Brave'), leading: Radio<int>(value: 4)),
-      ListTile(title: Text('Ecosia'), leading: Radio<int>(value: 5)),
-      ListTile(title: Text('Yahoo'), leading: Radio<int>(value: 6)),
-      ListTile(title: Text('Startpage'), leading: Radio<int>(value: 7)),
+      const ListTile(title: Text('DuckDuckGo'), leading: Radio<int>(value: 1)),
+      const ListTile(title: Text('Google'), leading: Radio<int>(value: 2)),
+      const ListTile(title: Text('Bing'), leading: Radio<int>(value: 3)),
+      const ListTile(title: Text('Brave'), leading: Radio<int>(value: 4)),
+      const ListTile(title: Text('Ecosia'), leading: Radio<int>(value: 5)),
+      const ListTile(title: Text('Yahoo'), leading: Radio<int>(value: 6)),
+      const ListTile(title: Text('Startpage'), leading: Radio<int>(value: 7)),
     ];
   }
 }
