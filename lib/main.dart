@@ -7,7 +7,7 @@ import 'package:hplusplus/strings.dart';
 import 'package:hplusplus/lrooster.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(key: Common.appKey));
   Common.loadSearchEngine();
   Common.loadClass();
   Common.loadTheme();
@@ -85,15 +85,15 @@ class _MyAppState extends State<MyApp> {
               labelType: NavigationRailLabelType.all,
               destinations: const [
                 NavigationRailDestination(
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.home_rounded),
                   label: Text(MainStrings.navRail1),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.grid_4x4_rounded),
+                  icon: Icon(Icons.window_rounded),
                   label: Text(MainStrings.navRail2),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.window_rounded),
+                  icon: Icon(Icons.settings_rounded),
                   label: Text(MainStrings.navRail3),
                 ),
                 NavigationRailDestination(

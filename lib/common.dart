@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -5,7 +6,6 @@ double graad = 2;
 String klas = 'H428';
 bool isDark = true;
 int selectedIndex = 0;
-
 int searchEngine = 1;
 const Map<int, List<String>> searchEngines = {
   1: ['DuckDuckGo', 'https://duckduckgo.com/?q='],
@@ -18,9 +18,10 @@ const Map<int, List<String>> searchEngines = {
 };
 
 class Common {
-  static void openlink(String url) {
-    final Uri _url = Uri.parse(url);
-    launchUrl(_url);
+  static final GlobalKey<State> appKey = GlobalKey<State>();
+  static void openlink(String _url) {
+    final Uri uri = Uri.parse(_url);
+    launchUrl(uri);
   }
 
   static Future<void> saveSearchEngine() async {

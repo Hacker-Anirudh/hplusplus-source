@@ -90,9 +90,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const .all(8.0),
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      setState(() {
-                        selectedIndex = 3;
-                      });
+                      selectedIndex = 3;
+                      Common.appKey.currentState?.setState(() {});
                     },
                     icon: const Icon(Icons.grid_3x3_rounded, size: 24),
                     label: const Text(
