@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hplusplus/common.dart';
-import 'package:hplusplus/db.dart';
 import 'strings.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -91,9 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const .all(8.0),
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      Common.openlink(
-                        'https://llnroosters.hhscholen.be/klassen/ed${classMap[klas]}p00001s3fffffffffffffff_${klas.toLowerCase()}_vs.png',
-                      );
+                      setState(() {
+                        selectedIndex = 3;
+                      });
                     },
                     icon: const Icon(Icons.grid_3x3_rounded, size: 24),
                     label: const Text(

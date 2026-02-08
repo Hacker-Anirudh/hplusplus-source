@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 double graad = 2;
 String klas = 'H428';
 bool isDark = true;
+int selectedIndex = 0;
 
 int searchEngine = 1;
 const Map<int, List<String>> searchEngines = {

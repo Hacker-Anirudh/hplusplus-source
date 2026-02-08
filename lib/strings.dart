@@ -6,6 +6,7 @@ class MainStrings {
   static const String navRail1 = 'Start';
   static const String navRail2 = 'Pixelart';
   static const String navRail3 = 'Instellingen';
+  static const String navRail4 = 'Lessenrooster';
 }
 
 class SettingsStrings {
@@ -14,7 +15,7 @@ class SettingsStrings {
   static const String ingesteldeKlas = 'Ingestelde klas:';
   static const String zoekmachineSelecteren = 'Zoekmachine selecteren';
   static const String title = 'H++';
-  static const String ver = '1.0.3';
+  static const String ver = '1.0.4';
   static const String legalese =
       'GNU GPL v3 licentie. © 2020-2026 Anirudh Menon. Alle rechten voorbehouden.';
   static const String aboutButton = 'Over H++';

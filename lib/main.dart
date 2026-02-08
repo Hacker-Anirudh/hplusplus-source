@@ -4,6 +4,7 @@ import 'package:hplusplus/common.dart';
 import 'package:hplusplus/home_screen.dart';
 import 'package:hplusplus/pixelart.dart';
 import 'package:hplusplus/strings.dart';
+import 'package:hplusplus/lrooster.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,8 +21,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int _selectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -77,10 +76,10 @@ class _MyAppState extends State<MyApp> {
         body: Row(
           children: [
             NavigationRail(
-              selectedIndex: _selectedIndex,
+              selectedIndex: selectedIndex,
               onDestinationSelected: (int index) {
                 setState(() {
-                  _selectedIndex = index;
+                  selectedIndex = index;
                 });
               },
               labelType: NavigationRailLabelType.all,
@@ -94,8 +93,12 @@ class _MyAppState extends State<MyApp> {
                   label: Text(MainStrings.navRail2),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.settings_rounded),
+                  icon: Icon(Icons.window_rounded),
                   label: Text(MainStrings.navRail3),
+                ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.grid_3x3_rounded),
+                  label: Text(MainStrings.navRail4),
                 ),
               ],
             ),
@@ -104,7 +107,8 @@ class _MyAppState extends State<MyApp> {
                 0: const HomeScreen(),
                 1: const PixelArtScreen(),
                 2: const SettingsScreen(),
-              }[_selectedIndex]!,
+                3: const LRScreen(),
+              }[selectedIndex]!,
             ),
           ],
         ),
