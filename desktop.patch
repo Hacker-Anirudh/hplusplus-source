@@ -1,0 +1,13 @@
+diff --git a/lib/lrooster.dart b/lib/lrooster.dart
+index 9f6e24d..da377d1 100644
+--- a/lib/lrooster.dart
++++ b/lib/lrooster.dart
+@@ -14,7 +14,7 @@ class _LRScreenState extends State<LRScreen> {
+   Widget build(BuildContext context) {
+     return Scaffold(
+       body: Image.network(
+-        'https://cors-anywhere.com/https://llnroosters.hhscholen.be/klassen/ed${classMap[klas]}p00001s3fffffffffffffff_${klas.toLowerCase()}_vs.png',
++        'https://llnroosters.hhscholen.be/klassen/ed${classMap[klas]}p00001s3fffffffffffffff_${klas.toLowerCase()}_vs.png',
+       ),
+     );
+   }
