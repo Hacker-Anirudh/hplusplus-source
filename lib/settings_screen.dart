@@ -83,29 +83,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              const Text('${SettingsStrings.wasm}$isWasm'),
-              Expanded(
-                child: Align(
-                  alignment: .bottomCenter,
-                  child: Padding(
-                    padding: const .all(36.0),
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        showAboutDialog(
-                          context: context,
-                          applicationName: SettingsStrings.title,
-                          applicationVersion: SettingsStrings.ver,
-                          applicationIcon: Image.asset('assets/icon.png'),
-                          applicationLegalese: SettingsStrings.legalese,
-                        );
-                      },
-                      label: const Text(
-                        SettingsStrings.aboutButton,
-                        style: TextStyle(fontSize: 18),
-                      ),
-                      icon: const Icon(Icons.info_rounded),
-                    ),
+              Padding(
+                padding: const .all(36.0),
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    showAboutDialog(
+                      context: context,
+                      applicationName: SettingsStrings.title,
+                      applicationVersion: SettingsStrings.ver,
+                      applicationIcon: Image.asset('assets/icon.png'),
+                      applicationLegalese: SettingsStrings.legalese,
+                    );
+                  },
+                  label: const Text(
+                    SettingsStrings.aboutButton,
+                    style: TextStyle(fontSize: 18),
                   ),
+                  icon: const Icon(Icons.info_rounded),
                 ),
               ),
             ],

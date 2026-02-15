@@ -15,12 +15,10 @@ class SettingsStrings {
   static const String ingesteldeKlas = 'Ingestelde klas:';
   static const String zoekmachineSelecteren = 'Zoekmachine selecteren';
   static const String title = 'H++';
-  static const String ver = '1.0.4';
+  static const String ver = '1.0.5';
   static const String legalese =
       'GNU GPL v3 licentie. © 2020-2026 Anirudh Menon. Alle rechten voorbehouden.';
   static const String aboutButton = 'Over H++';
-  static const String wasm =
-      'WASM aan (alleen van toepassing op website-versie):';
 }
 
 class HomeStrings {

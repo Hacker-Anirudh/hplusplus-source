@@ -14,7 +14,7 @@ class _LRScreenState extends State<LRScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Image.network(
-        'https://cors-anywhere.com/https://llnroosters.hhscholen.be/klassen/ed${classMap[klas]}p00001s3fffffffffffffff_${klas.toLowerCase()}_vs.png',
+        'https://llnroosters.hhscholen.be/klassen/ed${classMap[klas]}p00001s3fffffffffffffff_${klas.toLowerCase()}_vs.png',
       ),
     );
   }

@@ -43,42 +43,45 @@ class PixelArtScreenState extends State<PixelArtScreen> {
               ),
             ),
           ),
-          Wrap(
-            spacing: 8.0,
-            children:
-                [
-                  Colors.black,
-                  Colors.red,
-                  Colors.green,
-                  Colors.blue,
-                  Colors.purple,
-                  Colors.grey,
-                  Colors.pink,
-                  Colors.orange,
-                  Colors.white,
-                ].map((color) {
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedColor = color;
-                      });
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: color,
-                        shape: .circle,
-                        border: Border.all(
-                          color: selectedColor == color
-                              ? Colors.white
-                              : Colors.black,
-                          width: 2.0,
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Wrap(
+              spacing: 8.0,
+              children:
+                  [
+                    Colors.black,
+                    Colors.red,
+                    Colors.green,
+                    Colors.blue,
+                    Colors.purple,
+                    Colors.grey,
+                    Colors.pink,
+                    Colors.orange,
+                    Colors.white,
+                  ].map((color) {
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedColor = color;
+                        });
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: color,
+                          shape: .circle,
+                          border: Border.all(
+                            color: selectedColor == color
+                                ? Colors.white
+                                : Colors.black,
+                            width: 2.0,
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                }).toList(),
+                    );
+                  }).toList(),
+            ),
           ),
           Expanded(
             child: Center(
